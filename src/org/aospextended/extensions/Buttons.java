@@ -47,6 +47,7 @@ import android.view.View;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.development.DevelopmentSettings;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.utils.du.ActionConstants;
 import com.android.internal.utils.du.DUActionUtils;
@@ -92,6 +93,14 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final String KEY_DEVICE_PART = "device_part";
+        final String KEY_DEVICE_PART_PACKAGE_NAME = "com.elixir.settings.device";
+
+        // XiaomiParts
+        if (!DevelopmentSettings.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+           getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
+        }
 
         addPreferencesFromResource(R.xml.buttons);
 

@@ -1038,6 +1038,9 @@
 
     <string name="qs_running_services_title">Running Services Icon</string>
     <string name="qs_running_services_summary">Disable the tile running services icon in the footer</string>
-
+  
+    <!-- XiaomiParts -->
+    <string name="device_part_title">XiaomiParts</string>
+    <string name="device_part_opt">Tweaks</string>
 </resources>
 

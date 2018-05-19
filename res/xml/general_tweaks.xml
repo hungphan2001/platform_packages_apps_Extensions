@@ -145,5 +145,19 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="device_part_opt"
+        android:title="@string/device_part_opt">
+
+        <Preference
+            android:key="device_part"
+            android:persistent="false"
+            android:title="@string/device_part_title">
+            <intent android:action="android.intent.action.MAIN"
+                 android:targetPackage="com.elixir.settings.device"
+                 android:targetClass="com.elixir.settings.device.DeviceSettings"/>
+        </Preference>
+    </PreferenceCategory>
+
 </PreferenceScreen>
 
